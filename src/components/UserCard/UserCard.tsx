@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-// import { UserInfo, UserInfoProps } from 'components/UserInfo';
+import { UserInfo, UserInfoProps } from '../UserInfo/UserInfo';
 // import { UserStat, UserStatProps } from 'components/UserStat';
 // import { UserTitle, UserTitleProps } from 'components/UserTitle';
 import classes from './UserCard.module.scss';
@@ -10,7 +10,7 @@ import classes from './UserCard.module.scss';
 // }
 
 function UserCard() {
-// props: UserCardProps
+  // props: UserCardProps
   return (
     <div className={classes.userCard}>
       {/* <img
@@ -29,12 +29,8 @@ function UserCard() {
       followers={props.followers}
       following={props.following}
     />
-    <UserInfo
-      blog={props.blog}
-      company={props.company}
-      location={props.location}
-      twitter={props.twitter}
-    /> */}
+    */}
+      {/* <UserInfo blog={props.blog} company={props.company} location={props.location} twitter={props.twitter} /> */}
     </div>
   );
 }
