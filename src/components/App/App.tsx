@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import Counter from '../counter';
 import Button from '../Button/Button';
 import Search from '../Search/Search';
+import Header from '../Header/Header';
 
 const App = observer(() => {
   console.log('test');
@@ -10,9 +11,13 @@ const App = observer(() => {
 
   return (
     <div>
-      <Search hasError={false} onSubmit={() => {
-        console.log('s');
-      }}/>
+      <Header />
+      <Search
+        hasError={false}
+        onSubmit={() => {
+          console.log('s');
+        }}
+      />
     </div>
   );
 });
