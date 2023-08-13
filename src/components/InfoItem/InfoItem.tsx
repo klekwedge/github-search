@@ -2,7 +2,7 @@
 import classes from './InfoItem.module.scss';
 
 export interface Icon {
-  url: string;
+  component: React.ReactNode;
   text?: string;
   isLink?: boolean;
 }
@@ -21,7 +21,8 @@ export function InfoItem({ icon }: InfoItemProps) {
 
   return (
     <div className={`${classes.infoItem}${icon.text ? '' : ` ${classes.empty}`}`}>
-      {icon.url}
+      {icon.component}
+      {/* <img src={icon.url} alt="social icon"   /> */}
       <div>
         {icon.isLink && icon.text ? (
           <a href={currentHref} target="_blank" rel="noreferrer" className={classes.link}>
