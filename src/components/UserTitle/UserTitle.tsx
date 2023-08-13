@@ -1,10 +1,6 @@
+import { observer } from 'mobx-react-lite';
+import UserStore from '../../stores/UserStore';
 import classes from './UserTitle.module.scss';
-
-export interface UserTitleProps {
-  login: string;
-  name: string;
-  created: string;
-}
 
 const localDate = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric',
@@ -12,14 +8,22 @@ const localDate = new Intl.DateTimeFormat('en-GB', {
   year: 'numeric',
 });
 
-export function UserTitle({ login, name, created }: UserTitleProps) {
-  const joinedDate = localDate.format(new Date(created));
+const UserTitle = observer(() => {
+  const { user } = UserStore;
+
+  if (!user) {
+    return <h1>ff</h1>;
+  }
+
+  const joinedDate = localDate.format(new Date(user.created));
 
   return (
     <div className={classes.userTitle}>
-      <h2>{name}</h2>
-      <h3>{login}</h3>
+      <h2>{user.name}</h2>
+      <h3>{user.login}</h3>
       <span>{joinedDate}</span>
     </div>
   );
-}
+});
+
+export default UserTitle;

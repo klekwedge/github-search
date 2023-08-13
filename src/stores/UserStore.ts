@@ -1,24 +1,23 @@
 /* eslint-disable class-methods-use-this */
 import { makeAutoObservable, runInAction } from "mobx";
+import defaultUser from "../mock";
 import fetchUser from "../services/GitHubAPI";
 import { LocalGithubUser } from "../types";
 
 
 class UserStore {
-    user: LocalGithubUser | null = null;
+    user: LocalGithubUser | null = defaultUser;
 
     isLoading = false;
-
-    userName = 'ff';
 
     constructor() {
         makeAutoObservable(this)
     }
 
-    getGitHubUser = async () => {
+    getGitHubUser = async (userName: string) => {
         try {
             this.isLoading = true
-            const res = await fetchUser(this.userName)
+            const res = await fetchUser(userName)
 
             runInAction(() => {
                 this.user = res;

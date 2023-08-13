@@ -41,7 +41,6 @@ export function UserInfo({ blog, company, location, twitter }: UserInfoProps) {
 
   return (
     <div className={classes.userInfo}>
-      {/* <ReactComponent /> */}
       {icons.map((icon) => (
         <InfoItem icon={icon} key={v4()} />
       ))}

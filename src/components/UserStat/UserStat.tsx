@@ -1,26 +1,32 @@
+import { observer } from 'mobx-react-lite';
+import UserStore from '../../stores/UserStore';
 import classes from './UserStat.module.scss';
 
-export interface UserStatProps {
-  repos: number,
-  followers: number,
-  following: number,
-}
+const UserStat = observer(() => {
+  const { user } = UserStore;
 
-function UserStat({ repos, followers, following }: UserStatProps) {
-  return <div className={classes.userStat}>
-    <div className={classes.info}>
-      <div className={classes.infoTitle}>Repos</div>
-      <div className={classes.infoNumber}>{repos}</div>
-    </div>
-    <div className={classes.info}>
-      <div className={classes.infoTitle}>Following</div>
-      <div className={classes.infoNumber}>{following}</div>
-    </div>
-    <div className={classes.info}>
-      <div className={classes.infoTitle}>Followers</div>
-      <div className={classes.infoNumber}>{followers}</div>
-    </div>
-  </div>
-}
+  console.log(user);
 
-export {UserStat};
+  if (!user) {
+    return <h1>ff</h1>;
+  }
+
+  return (
+    <div className={classes.userStat}>
+      <div className={classes.info}>
+        <div className={classes.infoTitle}>Repos</div>
+        <div className={classes.infoNumber}>{user.repos}</div>
+      </div>
+      <div className={classes.info}>
+        <div className={classes.infoTitle}>Following</div>
+        <div className={classes.infoNumber}>{user.following}</div>
+      </div>
+      <div className={classes.info}>
+        <div className={classes.infoTitle}>Followers</div>
+        <div className={classes.infoNumber}>{user.followers}</div>
+      </div>
+    </div>
+  );
+});
+
+export default UserStat;
