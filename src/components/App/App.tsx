@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { observer } from 'mobx-react-lite';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Search from '../Search/Search';
 import Header from '../Header/Header';
 import Container from '../Container/Container';
@@ -9,32 +9,25 @@ import UserCard from '../UserCard/UserCard';
 import isGithubUser from '../../utils/typeguards';
 import extractLocalUser from '../../utils/extract-local-user';
 import { GithubError, GithubUser, LocalGithubUser } from '../../types';
+import UserStore from '../../stores/UserStore';
 
-const BASE_URL = 'https://api.github.com/users/';
+const App = observer(() => {
+  // const [user, setUser] = useState<LocalGithubUser | null>(defaultUser);
+  const { user, getGitHubUser } = UserStore;
 
-function App() {
-  const [user, setUser] = useState<LocalGithubUser | null>(defaultUser);
+  useEffect(() => {
+    getGitHubUser();
+  }, []);
 
-  const fetchUser = async (username: string) => {
-    const url = BASE_URL + username;
-
-    const res = await fetch(url);
-    const gitHubUser = (await res.json()) as GithubUser | GithubError;
-
-    if (isGithubUser(gitHubUser)) {
-      setUser(extractLocalUser(gitHubUser));
-    } else {
-      setUser(null);
-    }
-  };
+  console.log(user);
 
   return (
     <Container>
       <Header />
-      <Search hasError={!user} onSubmit={fetchUser} />
-      {user && <UserCard {...user} />}
+      {/* <Search hasError={!user} onSubmit={fetchUser} />
+      {user && <UserCard {...user} />} */}
     </Container>
   );
-}
+});
 
 export default App;
