@@ -1,25 +1,29 @@
 /* eslint-disable react/require-default-props */
 import classes from './InfoItem.module.scss';
 
-export interface InfoItemProps {
-  icon: React.ReactNode;
+export interface Icon {
+  url: string;
   text?: string;
   isLink?: boolean;
 }
 
-function InfoItem({ icon, text, isLink }: InfoItemProps) {
-  const currentText = text || 'Not Available';
+export interface InfoItemProps {
+  icon: Icon;
+}
+
+export function InfoItem({ icon }: InfoItemProps) {
+  const currentText = icon.text || 'Not Available';
   let currentHref;
 
-  if (isLink) {
-    currentHref = text && text.startsWith('http') ? text : `https://${text}`;
+  if (icon.isLink) {
+    currentHref = icon.text && icon.text.startsWith('http') ? icon.text : `https://${icon.text}`;
   }
 
   return (
-    <div className={`${classes.infoItem}${text ? '' : ` ${classes.empty}`}`}>
-      {icon}
+    <div className={`${classes.infoItem}${icon.text ? '' : ` ${classes.empty}`}`}>
+      {icon.url}
       <div>
-        {isLink && text ? (
+        {icon.isLink && icon.text ? (
           <a href={currentHref} target="_blank" rel="noreferrer" className={classes.link}>
             {currentText}
           </a>
@@ -30,5 +34,3 @@ function InfoItem({ icon, text, isLink }: InfoItemProps) {
     </div>
   );
 }
-
-export default InfoItem;
