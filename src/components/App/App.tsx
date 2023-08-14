@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import Search from '../Search/Search';
 import Header from '../Header/Header';
 import Container from '../Container/Container';
