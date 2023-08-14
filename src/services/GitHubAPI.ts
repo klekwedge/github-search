@@ -14,7 +14,6 @@ const fetchUser = async (username: string) => {
         return extractLocalUser(gitHubUser);
     }
     return null;
-
 };
 
 

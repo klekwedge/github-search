@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
 import UserStore from '../../stores/UserStore';
 import Button from '../Button/Button';
 import classes from './Search.module.scss';
 
-function Search() {
+const Search = observer(() => {
   const [inputValue, setInputValue] = useState('');
   const { hasError, getGitHubUser } = UserStore;
 
@@ -37,6 +38,6 @@ function Search() {
       </div>
     </form>
   );
-}
+});
 
 export default Search;

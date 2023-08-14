@@ -16,18 +16,21 @@ class UserStore {
     }
 
     getGitHubUser = async (userName: string) => {
-        try {
-            this.isLoading = true
-            const res = await fetchUser(userName)
+        this.isLoading = true
+        const res = await fetchUser(userName)
 
-            runInAction(() => {
+        runInAction(() => {
+            if (!res) {
+                this.isLoading = false;
+                this.hasError = true;
+            }
+            else {
                 this.user = res;
                 this.isLoading = false
-            })
-        } catch (error) {
-            this.isLoading = false;
-            this.hasError = true;
-        }
+                this.hasError = false;
+            }
+
+        })
     }
 }
 
