@@ -1,6 +1,6 @@
-# Example
+# Github search
 
-You can also read this README in [русский](https://github.com/klekwedge/example/blob/main/README.md)
+You can also read this README in [русский](https://github.com/klekwedge/github-search/blob/main/README.md)
 
 ## Table of contents
 
@@ -17,7 +17,7 @@ You can also read this README in [русский](https://github.com/klekwedge/e
 
 **To run the project, you need to have [npm](https://nodejs.org/en/) and [git](https://git-scm.com/downloads) installed on your computer**
 
-1. Make a clone of this repository ```git clone https://github.com/klekwedge/example.git```
+1. Make a clone of this repository ```git clone https://github.com/klekwedge/github-search.git```
 2. Install all required npm packages with ```npm i```
 3. Run the project with the command ```npm run dev```
 
@@ -29,8 +29,8 @@ You can also read this README in [русский](https://github.com/klekwedge/e
 
 ### Links
 
-- [Solution URL](https://github.com/klekwedge/example)
-- [Live Site URL](https://klekwedge-example.vercel.app/)
+- [Solution URL](https://github.com/klekwedge/github-search)
+- [Live Site URL](https://klekwedge-github-search.vercel.app/)
 
 ## My process
 
@@ -38,13 +38,12 @@ You can also read this README in [русский](https://github.com/klekwedge/e
 
 - React
 - TypeScript
-- Redux Toolkit
+- Mobx
 - SCSS
-- Chakra UI
+- React Testing Library
 
 ### What I learned
 
-Created my first React application, learned how to display a list in JSX markup, add, delete, change a task in the to-do list, pass props, learned how to use hooks. I understood how to organize the React project structure, learned how to change the state of the components and react to changes, use the library of UI components.
 
 ## Author
 

@@ -1,6 +1,6 @@
-# Example
+# Github search
 
-Вы также можете прочитать этот README на [английском](https://github.com/klekwedge/example/blob/main/README.EN.md)
+Вы также можете прочитать этот README на [английском](https://github.com/klekwedge/github-search/blob/main/README.EN.md)
 
 ## Оглавление
 
@@ -17,7 +17,7 @@
 
 **Для запуска проекта на вашем компьютере должны быть установлены [npm](https://nodejs.org/en/) и [git](https://git-scm.com/downloads)**
 
-1. Сделайте клон этого репозитория ```git clone https://github.com/klekwedge/example.git```
+1. Сделайте клон этого репозитория ```git clone https://github.com/klekwedge/github-search.git```
 2. Установите все необходимые пакеты npm с помощью ```npm i```
 3. Запустите проект командой ```npm run dev```
 
@@ -29,8 +29,8 @@
 
 ### Ссылки
 
-- [Ссылка на проект](https://github.com/klekwedge/example)
-- [Деплой](https://klekwedge-example.vercel.app/)
+- [Ссылка на проект](https://github.com/klekwedge/github-search)
+- [Деплой](https://klekwedge-github-search.vercel.app/)
 
 ## Мой процесс
 
@@ -38,13 +38,11 @@
 
 - React
 - TypeScript
-- Redux Toolkit
+- Mobx
 - SCSS
-- Chakra UI
+- React Testing Library
 
 ### Что я узнал
-
-Создал свое первое React-приложение, научился отображать список в JSX-разметке, добавлять, удалять, изменять задачу в списке дел, передавать пропсы, научился использовать хуки. Я понял, как организовать структуру проекта React, научился менять состояние компонентов и реагировать на изменения, использовать библиотеку UI-компонентов.
 
 ## Автор
 
