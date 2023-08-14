@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
-/* eslint-disable react/require-default-props */
 import { observer } from 'mobx-react-lite';
 import UserStore from '../../stores/UserStore';
 import UserInfo from '../UserInfo/UserInfo';

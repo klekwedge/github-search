@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/require-default-props */
 import { ReactComponent as LocationIcon } from '/public/icon-location.svg';
 import { ReactComponent as BlogIcon } from '/public/icon-website.svg';
@@ -6,9 +5,10 @@ import { ReactComponent as TwitterIcon } from '/public/icon-twitter.svg';
 import { ReactComponent as CompanyIcon } from '/public/icon-company.svg';
 
 import { v4 } from 'uuid';
-import { Icon, InfoItem } from '../InfoItem/InfoItem';
+import InfoItem from '../InfoItem/InfoItem';
 
 import classes from './UserInfo.module.scss';
+import { Icon } from '../../types';
 
 export interface UserInfoProps {
   company?: string;
