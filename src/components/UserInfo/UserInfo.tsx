@@ -17,7 +17,7 @@ export interface UserInfoProps {
   blog?: string;
 }
 
-export function UserInfo({ blog, company, location, twitter }: UserInfoProps) {
+function UserInfo({ blog, company, location, twitter }: UserInfoProps) {
 
   const icons: Icon[] = [
     {
@@ -47,3 +47,6 @@ export function UserInfo({ blog, company, location, twitter }: UserInfoProps) {
     </div>
   );
 }
+
+
+export default UserInfo;

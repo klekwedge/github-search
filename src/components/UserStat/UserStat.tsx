@@ -5,10 +5,8 @@ import classes from './UserStat.module.scss';
 const UserStat = observer(() => {
   const { user } = UserStore;
 
-  console.log(user);
-
   if (!user) {
-    return <h1>ff</h1>;
+    return null;
   }
 
   return (

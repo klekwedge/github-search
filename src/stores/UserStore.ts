@@ -1,14 +1,15 @@
 /* eslint-disable class-methods-use-this */
 import { makeAutoObservable, runInAction } from "mobx";
-import defaultUser from "../mock";
 import fetchUser from "../services/GitHubAPI";
 import { LocalGithubUser } from "../types";
 
 
 class UserStore {
-    user: LocalGithubUser | null = defaultUser;
+    user: LocalGithubUser | null = null;
 
     isLoading = false;
+
+    hasError = false;
 
     constructor() {
         makeAutoObservable(this)
@@ -25,12 +26,8 @@ class UserStore {
             })
         } catch (error) {
             this.isLoading = false;
-            console.error('Error in the fetch request');
+            this.hasError = true;
         }
-        // if (this.userName) {
-        //     return BASE_URL + this.userName;
-        // }
-        // return null
     }
 }
 

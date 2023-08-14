@@ -1,19 +1,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import { useState } from 'react';
 import UserStore from '../../stores/UserStore';
 import Button from '../Button/Button';
 import classes from './Search.module.scss';
 
 function Search() {
-  const { getGitHubUser } = UserStore;
-  // hasError={!user} onSubmit={fetchUser}
+  const [inputValue, setInputValue] = useState('');
+  const { hasError, getGitHubUser } = UserStore;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const text = event.currentTarget.username.value;
 
-    if (typeof text === 'string') {
-      getGitHubUser(text);
-      event.currentTarget.reset();
+    if (inputValue) {
+      getGitHubUser(inputValue);
+      setInputValue('');
     }
   };
 
@@ -29,8 +29,10 @@ function Search() {
           type="text"
           name="username"
           placeholder="Search GitHub username…"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
         />
-        {/* {hasError && <div className={classes.error}>No results</div>} */}
+        {hasError && <div className={classes.error}>No results</div>}
         <Button>Search</Button>
       </div>
     </form>

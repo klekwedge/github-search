@@ -1,16 +1,17 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable react/require-default-props */
+import { observer } from 'mobx-react-lite';
 import UserStore from '../../stores/UserStore';
-import { UserInfo, UserInfoProps } from '../UserInfo/UserInfo';
+import UserInfo from '../UserInfo/UserInfo';
 import UserStat from '../UserStat/UserStat';
 import UserTitle from '../UserTitle/UserTitle';
 import classes from './UserCard.module.scss';
 
-function UserCard() {
+const UserCard = observer(() => {
   const { user } = UserStore;
 
   if (!user) {
-    return <h1>ff</h1>;
+    return null;
   }
 
   return (
@@ -22,6 +23,6 @@ function UserCard() {
       <UserInfo />
     </div>
   );
-}
+});
 
 export default UserCard;

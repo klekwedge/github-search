@@ -12,7 +12,7 @@ const UserTitle = observer(() => {
   const { user } = UserStore;
 
   if (!user) {
-    return <h1>ff</h1>;
+    return null;
   }
 
   const joinedDate = localDate.format(new Date(user.created));
