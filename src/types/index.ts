@@ -35,7 +35,7 @@ export type GithubError = {
 }
 
 export interface Icon {
-    component: React.ReactNode;
+    url: string;
     text?: string;
     isLink?: boolean;
 }

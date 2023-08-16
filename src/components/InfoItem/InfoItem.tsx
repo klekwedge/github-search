@@ -16,7 +16,7 @@ function InfoItem({ icon }: InfoItemProps) {
 
   return (
     <div className={`${classes.infoItem}${icon.text ? '' : ` ${classes.empty}`}`}>
-      {icon.component}
+      <img src={icon.url} alt="icon" />
       <div>
         {icon.isLink && icon.text ? (
           <a href={currentHref} target="_blank" rel="noreferrer" className={classes.link}>
