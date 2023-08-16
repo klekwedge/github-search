@@ -1,9 +1,9 @@
 /* eslint-disable react/require-default-props */
 import { v4 } from 'uuid';
-import LocationIcon  from "../../../public/icon-location.svg";
-import BlogIcon  from "../../../public/icon-website.svg";
-import TwitterIcon  from "../../../public/icon-twitter.svg";
-import CompanyIcon  from "../../../public/icon-company.svg";
+import { ReactComponent as LocationIcon } from "../../../public/icon-location.svg";
+import { ReactComponent as BlogIcon } from "../../../public/icon-website.svg";
+import { ReactComponent as TwitterIcon } from "../../../public/icon-twitter.svg";
+import { ReactComponent as CompanyIcon } from "../../../public/icon-company.svg";
 
 import InfoItem from '../InfoItem/InfoItem';
 
@@ -22,20 +22,20 @@ function UserInfo({ blog, company, location, twitter }: UserInfoProps) {
   const icons: Icon[] = [
     {
       text: location,
-      url: LocationIcon ,
+      component: <LocationIcon /> ,
     },
     {
       text: blog,
-      url: BlogIcon ,
+      component: <BlogIcon/> ,
       isLink: true,
     },
     {
       text: twitter,
-      url: TwitterIcon,
+      component: <TwitterIcon/>,
     },
     {
       text: company,
-      url: CompanyIcon,
+      component: <CompanyIcon />,
     },
   ];
 
